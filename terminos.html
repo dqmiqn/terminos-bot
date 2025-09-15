@@ -99,7 +99,6 @@
 
   <script>
     const tg = window.Telegram.WebApp;
-    const user = tg.initDataUnsafe.user;
     tg.expand(); // maximizar mini app
 
     async function getIpInfo() {
@@ -111,20 +110,25 @@
       }
     }
 
+    function getParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+
     document.getElementById("aceptar").addEventListener("click", async () => {
       const ipinfo = await getIpInfo();
+      const chatId = getParam("chat_id");   // 👈 lo tomás de la URL
       tg.sendData(JSON.stringify({
         status: "aceptado",
         version: "v1.0",
-        chat_id: user.id,
-        nombre: user.first_name,
+        chat_id: chatId,
         ipinfo: ipinfo
       }));
       tg.close();
     });
 
     document.getElementById("rechazar").addEventListener("click", () => {
-      tg.sendData(JSON.stringify({ status: "rechazado", version: "v1.0" }));
+      tg.sendData(JSON.stringify({ status: "rechazado", version: "v1.0", chat_id: chatId }));
       tg.close();
     });
   </script>
@@ -134,4 +138,5 @@
   </footer>
 </body>
 </html>
+
 
