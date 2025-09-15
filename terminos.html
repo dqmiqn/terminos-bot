@@ -52,6 +52,29 @@
       font-size: 0.85rem;
       color: #6b7280;
     }
+    .botones {
+      display: flex;
+      justify-content: center;   /* centra horizontal */
+      gap: 1rem;                 /* espacio entre botones */
+      margin-top: 2rem;          /* separación del texto */
+    }
+    .botones button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    
+    #aceptar {
+      background-color: #16a34a; /* verde */
+      color: white;
+    }
+    
+    #rechazar {
+      background-color: #dc2626; /* rojo */
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -94,8 +117,10 @@
     <p>Al registrarse y utilizar la plataforma, el usuario declara haber leído, comprendido y aceptado en su totalidad los presentes Términos y Condiciones.</p>
   </main>
 
-  <button id="aceptar">✅ Acepto</button>
-  <button id="rechazar">❌ No acepto</button>
+  <div class="botones">
+    <button id="aceptar">✅ Acepto</button>
+    <button id="rechazar">❌ No acepto</button>
+  </div>
 
   <script>
     const tg = window.Telegram.WebApp;
@@ -138,5 +163,6 @@
   </footer>
 </body>
 </html>
+
 
 
