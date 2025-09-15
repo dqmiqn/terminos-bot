@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Términos y Condiciones</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    button { padding: 10px 20px; margin: 10px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>Términos y Condiciones v1.0</h2>
+  <p>
+    1. El usuario acepta que...<br>
+    2. El servicio se brinda según...<br>
+    3. Etc.
+  </p>
+
+  <button id="aceptar">✅ Acepto</button>
+  <button id="rechazar">❌ No acepto</button>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand(); // maximiza la mini app
+
+    document.getElementById("aceptar").addEventListener("click", () => {
+      tg.sendData("aceptado");
+      tg.close();
+    });
+
+    document.getElementById("rechazar").addEventListener("click", () => {
+      tg.sendData("rechazado");
+      tg.close();
+    });
+  </script>
+</body>
+</html>
