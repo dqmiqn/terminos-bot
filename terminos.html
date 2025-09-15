@@ -153,6 +153,7 @@
     });
 
     document.getElementById("rechazar").addEventListener("click", () => {
+      const chatId = getParam("chat_id"); 
       tg.sendData(JSON.stringify({ status: "rechazado", version: "v1.0", chat_id: chatId }));
       tg.close();
     });
@@ -163,6 +164,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
