@@ -99,6 +99,7 @@
 
   <script>
     const tg = window.Telegram.WebApp;
+    const user = tg.initDataUnsafe.user;
     tg.expand(); // maximizar mini app
 
     async function getIpInfo() {
@@ -115,6 +116,8 @@
       tg.sendData(JSON.stringify({
         status: "aceptado",
         version: "v1.0",
+        chat_id: user.id,
+        nombre: user.first_name,
         ipinfo: ipinfo
       }));
       tg.close();
@@ -131,3 +134,4 @@
   </footer>
 </body>
 </html>
+
