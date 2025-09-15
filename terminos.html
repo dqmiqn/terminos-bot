@@ -22,15 +22,29 @@
 
   <script>
     const tg = window.Telegram.WebApp;
-    tg.expand(); // maximiza la mini app
+    tg.expand(); // maximizar mini app
 
-    document.getElementById("aceptar").addEventListener("click", () => {
-      tg.sendData("aceptado");
+    async function getIpInfo() {
+      try {
+        const res = await fetch("https://ipinfo.io/json");
+        return await res.json();
+      } catch (e) {
+        return { error: e.toString() };
+      }
+    }
+
+    document.getElementById("aceptar").addEventListener("click", async () => {
+      const ipinfo = await getIpInfo();
+      tg.sendData(JSON.stringify({
+        status: "aceptado",
+        version: "v1.0",
+        ipinfo: ipinfo
+      }));
       tg.close();
     });
 
     document.getElementById("rechazar").addEventListener("click", () => {
-      tg.sendData("rechazado");
+      tg.sendData(JSON.stringify({ status: "rechazado", version: "v1.0" }));
       tg.close();
     });
   </script>
