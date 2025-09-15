@@ -1,21 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Términos y Condiciones</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <title>Términos y Condiciones</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; }
-    button { padding: 10px 20px; margin: 10px; font-size: 16px; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      color: #111;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #1f2937;
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #1f2937;
+      margin-top: 1.4rem;
+      font-size: 1.2rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .muted {
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
   </style>
 </head>
 <body>
-  <h2>Términos y Condiciones v1.0</h2>
-  <p>
-    1. El usuario acepta que...<br>
-    2. El servicio se brinda según...<br>
-    3. Etc.
-  </p>
+  <header>
+    <h1>Términos y Condiciones</h1>
+    <p class="muted">Versión 1.0 — Última actualización: 2025-09-15</p>
+  </header>
+  <main>
+    <h2>1. Objeto</h2>
+    <p>La plataforma actúa únicamente como nexo de comunicación entre usuarios finales y técnicos matriculados. La plataforma no presta servicios técnicos ni realiza trabajos por cuenta propia.</p>
+
+    <h2>2. Registro de Usuarios</h2>
+    <p>Para utilizar la plataforma, el usuario debe registrarse brindando como datos mínimos: nombre y apellido completos, DNI o CUIT, correo electrónico y teléfono de contacto.</p>
+    <p>La aceptación de los presentes Términos y Condiciones se registra junto con la fecha, hora, dirección IP, User-Agent y método de aceptación, generándose un hash que asegura la integridad de los datos.</p>
+
+    <h2>3. Responsabilidad de los Técnicos</h2>
+    <ul>
+      <li>Todos los técnicos que ofrezcan servicios a través de la plataforma deben estar matriculados en su respectivo colegio o entidad habilitante.</li>
+      <li>La responsabilidad civil, penal y/o administrativa por el servicio prestado, daños, perjuicios, accidentes o posibles estafas recae exclusivamente sobre el técnico que realizó el trabajo.</li>
+      <li>La plataforma corrobora la validez de la matrícula y documentación provista por el técnico, pero no garantiza la calidad del servicio ni asume responsabilidades por su ejecución.</li>
+    </ul>
+
+    <h2>4. Responsabilidad de los Usuarios</h2>
+    <ul>
+      <li>Los usuarios finales son responsables de la veracidad de los datos brindados en el registro y en la solicitud de trabajos.</li>
+      <li>El pago de los servicios y cualquier reclamo deberá realizarse directamente con el técnico contratado.</li>
+    </ul>
+
+    <h2>5. Limitación de Responsabilidad de la Plataforma</h2>
+    <p>La plataforma no será responsable por daños directos, indirectos, incidentales, especiales o consecuenciales derivados del uso de los servicios de los técnicos.</p>
+    <p>Tampoco será responsable por incumplimientos contractuales, accidentes, daños materiales o personales ocasionados durante la prestación de los servicios.</p>
+
+    <h2>6. Uso de Datos Personales</h2>
+    <p>Los datos de los usuarios serán utilizados únicamente para permitir el funcionamiento de la plataforma y la vinculación con los técnicos. La plataforma cumple con la Ley 25.326 de Protección de Datos Personales.</p>
+
+    <h2>7. Jurisdicción y Ley Aplicable</h2>
+    <p>Estos Términos y Condiciones se rigen por las leyes de la República Argentina. Cualquier conflicto será sometido a los tribunales ordinarios con asiento en la ciudad de Córdoba, Argentina.</p>
+
+    <h2>8. Aceptación</h2>
+    <p>Al registrarse y utilizar la plataforma, el usuario declara haber leído, comprendido y aceptado en su totalidad los presentes Términos y Condiciones.</p>
+  </main>
 
   <button id="aceptar">✅ Acepto</button>
   <button id="rechazar">❌ No acepto</button>
@@ -48,5 +125,9 @@
       tg.close();
     });
   </script>
+  
+  <footer>
+    © 2025 Plataforma Servicios. Todos los derechos reservados.
+  </footer>
 </body>
 </html>
