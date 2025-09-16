@@ -163,7 +163,7 @@
       }
     }
     
-    document.getElementById("aceptar").addEventListener("click", () => {
+    document.getElementById("aceptar").addEventListener("click", async () => {
       const ipinfo = await getIpInfo();
       /*const chatId = getParam("chat_id");   // 👈 lo tomás de la URL
       Telegram.WebApp.sendData(JSON.stringify({
@@ -180,7 +180,7 @@
       Telegram.WebApp.close();
     });
 
-    document.getElementById("rechazar").addEventListener("click", () => {
+    document.getElementById("rechazar").addEventListener("click", async () => {
       /*const chatId = getParam("chat_id"); 
       Telegram.WebApp.sendData(JSON.stringify({ status: "rechazado", version: "v1.0", chat_id: chatId }));*/
       enviarAlBot({
@@ -197,6 +197,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
