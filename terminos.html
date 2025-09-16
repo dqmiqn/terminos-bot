@@ -140,7 +140,7 @@
     }
 
     async function enviarAlChat(chatId, mensaje) {
-      const botToken = "8238929380:AAGoisy6zeegSDeRgT00gWgv0SXDY2llBsk";   // ⚠️ Token de tu bot
+      const botToken = "";   // ⚠️ Token de tu bot
       const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
     
       const body = {
@@ -161,20 +161,22 @@
     document.getElementById("aceptar").addEventListener("click", async () => {
       const ipinfo = await getIpInfo();
       const chatId = getParam("chat_id");   // 👈 lo tomás de la URL
-      /*Telegram.WebApp.sendData(JSON.stringify({
+      Telegram.WebApp.sendData(JSON.stringify({
         status: "aceptado",
         version: "v1.0",
-        chat_id: chatId
-        ipinfo: ipinfo
-      }));*/
-      enviarAlChat(chatId, "aceptado");
+        chat_id: chatId,
+        ip: ipinfo.ip,
+        ciudad: ipinfo.city,
+        loc: ipinfo.loc
+      }));
+      //enviarAlChat(chatId, "aceptado");
       Telegram.WebApp.close();
     });
 
     document.getElementById("rechazar").addEventListener("click", async () => {
       const chatId = getParam("chat_id"); 
-      /*Telegram.WebApp.sendData(JSON.stringify({ status: "rechazado", version: "v1.0", chat_id: chatId }));*/
-      enviarAlChat(chatId, "rechazado");
+      Telegram.WebApp.sendData(JSON.stringify({ status: "rechazado", version: "v1.0", chat_id: chatId }));
+      //enviarAlChat(chatId, "rechazado");
       Telegram.WebApp.close();
     });
   </script>
@@ -184,6 +186,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
