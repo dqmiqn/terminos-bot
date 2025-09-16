@@ -123,8 +123,7 @@
   </div>
 
   <script>
-    const tg = Telegram.WebApp;
-    tg.expand(); // maximizar mini app
+    Telegram.WebApp.expand(); // maximizar mini app
 
     async function getIpInfo() {
       try {
@@ -143,19 +142,19 @@
     document.getElementById("aceptar").addEventListener("click", async () => {
       const ipinfo = await getIpInfo();
       const chatId = getParam("chat_id");   // 👈 lo tomás de la URL
-      tg.sendData(JSON.stringify({
+      Telegram.WebApp.sendData(JSON.stringify({
         status: "aceptado",
         version: "v1.0",
         chat_id: chatId,
         ipinfo: ipinfo
       }));
-      tg.close();
+      Telegram.WebApp.close();
     });
 
     document.getElementById("rechazar").addEventListener("click", () => {
       const chatId = getParam("chat_id"); 
-      tg.sendData(JSON.stringify({ status: "rechazado", version: "v1.0", chat_id: chatId }));
-      tg.close();
+      Telegram.WebApp.sendData(JSON.stringify({ status: "rechazado", version: "v1.0", chat_id: chatId }));
+      Telegram.WebApp.close();
     });
   </script>
   
@@ -164,4 +163,5 @@
   </footer>
 </body>
 </html>
+
 
