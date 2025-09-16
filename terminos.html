@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://telegram.org/js/telegram-web-app.js?59"></script>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <title>Términos y Condiciones</title>
   <style>
     body {
@@ -147,8 +147,7 @@
         status: "aceptado",
         version: "v1.0",
         chat_id: chatId,
-        ipinfo: ipinfo,
-        initData: tg.initData    // 👈 importante!
+        ipinfo: ipinfo
       }));
       tg.close();
     });
@@ -165,9 +164,3 @@
   </footer>
 </body>
 </html>
-
-
-
-
-
-
