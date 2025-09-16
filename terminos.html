@@ -139,14 +139,14 @@
       return url.searchParams.get(name);
     }
 
-    document.getElementById("aceptar").addEventListener("click", async () => {
-      const ipinfo = await getIpInfo();
+    document.getElementById("aceptar").addEventListener("click", () => {
+      //const ipinfo = await getIpInfo();
       const chatId = getParam("chat_id");   // 👈 lo tomás de la URL
       Telegram.WebApp.sendData(JSON.stringify({
         status: "aceptado",
         version: "v1.0",
-        chat_id: chatId,
-        ipinfo: ipinfo
+        chat_id: chatId
+        //ipinfo: ipinfo
       }));
       Telegram.WebApp.close();
     });
@@ -163,5 +163,6 @@
   </footer>
 </body>
 </html>
+
 
 
